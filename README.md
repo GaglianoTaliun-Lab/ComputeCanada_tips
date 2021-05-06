@@ -15,7 +15,7 @@ references: https://code.visualstudio.com/docs/remote/troubleshooting#_improving
 ### Steps to establish JupyterNotebook environment
 References: https://docs.computecanada.ca/wiki/JupyterNotebook#Introduction
 
-- Log into remote machine using ssh: $ ssh qiangye@beluga.computecanada.ca
+- Log into remote machine using ssh in a cluster with your username: $ ssh [username]@[cluster].computecanada.ca
 
 - Load python module and activete python environment: $ module load python/3.7.9
 
