@@ -29,7 +29,7 @@ References: https://docs.computecanada.ca/wiki/JupyterNotebook#Introduction
 
 - Make the script executable: (jupyter_py3)_[name@server ~]$ chmod u+x $VIRTUAL_ENV/bin/notebook.sh
 
-- Starting jupyter notebook: $ salloc --time=3:0:0 --ntasks=1 --cpus-per-task=4 --mem-per-cpu=10240M --account=def-professor srun $VIRTUAL_ENV/bin/notebook.sh
+- Starting jupyter notebook: $ salloc --time=3:0:0 --ntasks=1 --cpus-per-task=4 --mem-per-cpu=10240M --account=def-<PI_username> srun $VIRTUAL_ENV/bin/notebook.sh
 
   You may change the values of --account, --time, --mem-per-cpus.
 
