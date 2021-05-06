@@ -15,24 +15,29 @@ references: https://code.visualstudio.com/docs/remote/troubleshooting#_improving
 ### Steps to establish JupyterNotebook environment
 References: https://docs.computecanada.ca/wiki/JupyterNotebook#Introduction
 
-1. log into remote machine using ssh: ssh qiangye@beluga.computecanada.ca
-2. load python module and activete python environment
-   module load python/3.7.9
-3. create your virtual environment for Python
-   python -m venv venv
-4. activate your virtual environment
-   source venv/bin/activate
-5. install jupyter notebook and related extensions
-   pip install jupyter
-6. Create a wrapper script that launches jupyter notebook
-   (jupyter_py3)_[name@server ~]$ echo -e '#!/bin/bash\nunset XDG_RUNTIME_DIR\njupyter notebook --ip $(hostname -f) --no-browser' > $VIRTUAL_ENV/bin/notebook.sh
-7. make the script executable:
-   (jupyter_py3)_[name@server ~]$ chmod u+x $VIRTUAL_ENV/bin/notebook.sh
-8. starting jupyter notebook:
-   salloc --time=3:0:0 --ntasks=1 --cpus-per-task=4 --mem-per-cpu=10240M --account=def-gsarah srun $VIRTUAL_ENV/bin/notebook.sh
-9. open another terminal, activate sshuttle:
-   sshuttle --dns -Nr qiangye@beluga.computecanada.ca
-10.once jupyter notebook job has started, copy the web link to browser, all done.
+- Log into remote machine using ssh: $ ssh qiangye@beluga.computecanada.ca
+
+- Load python module and activete python environment: $ module load python/3.7.9
+
+- Create your virtual environment for Python: $ python -m venv venv
+
+- Activate your virtual environment: $ source venv/bin/activate
+
+- Install jupyter notebook and related extensions: $ pip install jupyter
+
+- Create a wrapper script that launches jupyter notebook: $ echo -e '#!/bin/bash\nunset XDG_RUNTIME_DIR\njupyter notebook --ip $(hostname -f) --no-browser' > $VIRTUAL_ENV/bin/notebook.sh
+
+- Make the script executable: (jupyter_py3)_[name@server ~]$ chmod u+x $VIRTUAL_ENV/bin/notebook.sh
+
+- Starting jupyter notebook: $ salloc --time=3:0:0 --ntasks=1 --cpus-per-task=4 --mem-per-cpu=10240M --account=def-professor srun $VIRTUAL_ENV/bin/notebook.sh
+
+  You may change the values of --account, --time, --mem-per-cpus.
+
+- open another terminal, activate sshuttle: $ sshuttle --dns -Nr [usename]@[cluster].computecanada.ca
+  
+  You may change the username and cluster.
+
+- Once jupyter notebook job has started, copy the web link to browser, all done.
 
 ### Using Visual Studio Code by SSH remote connection
 references: https://code.visualstudio.com/docs/remote/ssh
