@@ -9,7 +9,7 @@
 ### Remote Development Tips and Tricks
 log into remote machine using SSH keys(without input password everytime)
 
-references: https://code.visualstudio.com/docs/remote/troubleshooting#_improving-your-security-with-a-dedicated-key
+References: https://code.visualstudio.com/docs/remote/troubleshooting#_improving-your-security-with-a-dedicated-key
 
 
 ### Steps to establish JupyterNotebook environment
@@ -40,7 +40,7 @@ References: https://docs.computecanada.ca/wiki/JupyterNotebook#Introduction
 - Once jupyter notebook job has started, copy the web link to browser, all done.
 
 ### Using Visual Studio Code by SSH remote connection
-references: https://code.visualstudio.com/docs/remote/ssh
+References: https://code.visualstudio.com/docs/remote/ssh
 
 
 ### Install python, jupyter notebook extension support for visual studio code.
