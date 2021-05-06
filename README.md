@@ -1,13 +1,13 @@
 # ComputeCanada_tips
 
 ### Sharing files via Globus
-1) Login to Globus and navigate to the folder/files you want to shared in https://app.globus.org/file-manager
+1) Login to Globus (via your Compute Canada login) and navigate to the folder/files you want to shared in https://app.globus.org/file-manager
 2) Select the folder/files you want to share and on the right side click "Share". 
 3) Use add guest collection on the right hand side to give a user read permission.
 
 
 ### Remote Development Tips and Tricks
-log into remote machine using SSH keys(without input password everytime)
+Log into remote machine using SSH keys(without inputting password everytime)
 
 References: https://code.visualstudio.com/docs/remote/troubleshooting#_improving-your-security-with-a-dedicated-key
 
@@ -17,7 +17,7 @@ References: https://docs.computecanada.ca/wiki/JupyterNotebook#Introduction
 
 - Log into remote machine using ssh in a cluster with your username: $ ssh [username]@[cluster].computecanada.ca
 
-- Load python module and activete python environment: $ module load python/3.7.9
+- Load python module and activate python environment: $ module load python/3.7.9
 
 - Create your virtual environment for Python: $ python -m venv venv
 
