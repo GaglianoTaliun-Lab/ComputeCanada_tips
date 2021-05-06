@@ -43,5 +43,5 @@ References: https://docs.computecanada.ca/wiki/JupyterNotebook#Introduction
 references: https://code.visualstudio.com/docs/remote/ssh
 
 
-### install python, jupyter notebook extension support for visual studio code.
+### Install python, jupyter notebook extension support for visual studio code.
 Usually, Visual Studio Code will guide you to complete installing these extensions.
