@@ -1,5 +1,8 @@
 # ComputeCanada_tips
 
+### Running scripts
+Do *not* run jobs on the login node. Always use sbatch or salloc (interactive job)! https://docs.computecanada.ca/wiki/Running_jobs#Interactive_jobs
+
 ### Sharing files via Globus
 1) Login to Globus (via your Compute Canada login) and navigate to the folder/files you want to shared in https://app.globus.org/file-manager
 2) Select the folder/files you want to share and on the right side click "Share". 
