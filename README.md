@@ -50,7 +50,8 @@ References: https://code.visualstudio.com/docs/remote/ssh
 Usually, Visual Studio Code will guide you to complete installing these extensions.
 
 ### Installing packages in R from GitHub (install_github) if behind proxy/firewall
-library("httr")
-set_config(use_proxy("github.com", port = 443, username = "compute-canada-username", password="compute-canada-password"))
-library("devtools")
-devtools::install_github("PheWAS/PheWAS") #or insert whichever package you want to install
+R 
+<p>library("httr")<p/>
+<p>set_config(use_proxy("github.com", port = 443, username = "compute-canada-username", password="compute-canada-password"))<p/>
+<p>library("devtools")<p/>
+<p>devtools::install_github("PheWAS/PheWAS") #or insert whichever package you want to install<p/>
