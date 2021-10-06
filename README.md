@@ -55,3 +55,62 @@ R
 <p>set_config(use_proxy("github.com", port = 443, username = "compute-canada-username", password="compute-canada-password"))<p/>
 <p>library("devtools")<p/>
 <p>devtools::install_github("PheWAS/PheWAS") #or insert whichever package you want to install<p/>
+
+
+### Setup Machine Learning Environment using PyTorch and Python virtual Environment
+
+- Please first follow the steps in section: **Steps to establish JupyterNotebook environment**(step1-4) to install and activate a Python environment
+- In the activated virtual environment install pytorch library following the pytorch official website guidelines(https://pytorch.org/get-started/locally/#supported-linux-distributions)
+- Launch an interactive job in CC, write python codes like the following to test if Pytorch is successfully installed
+  ```python
+  import torch
+  x = torch.rand(5, 3)
+  print(x)
+  ```
+  The output should be something similar to:
+  ```python
+  tensor([[0.3380, 0.3845, 0.3217],
+          [0.8337, 0.9050, 0.2650],
+          [0.2979, 0.7141, 0.9069],
+          [0.1449, 0.1132, 0.1375],
+          [0.4675, 0.3947, 0.1426]])
+  ```
+  Use the following code to test if the job environment supports GPU computation:
+  ```python
+  import torch
+  torch.cuda.is_available()
+  ```
+- To submit an job or job array, it is recommended to build 3 files: 
+  1. a A.py file for the python codes
+  2. a B.sh file including bash commands to activate the python environment and run the .py file
+     ```bash
+     
+      # python environment and pytorch is installed here
+
+      PYTHON_ENV_PATH="path_to_python_environment" # change this
+      cd $PYTHON_ENV_PATH
+      source venv/bin/activate # activate python environment where pytorch is installed
+
+      # go to the code directory
+      CODE_PATH="path_where_python_file_is_saved" # change this
+      cd $CODE_PATH
+
+      python A.py                    # run the python file
+      # the output will be saved in a slurm-[job_id].out file
+     ```
+  4. a C.sh file including `sbatch` command and related configurations.
+     ```bash
+     #!/bin/bash
+
+     #SBATCH --array=1                # modify here to change the Array
+     #SBATCH --time=3:0:0
+     #SBATCH --mem-per-cpu=5G
+     #SBATCH --cpus-per-task=4
+     #SBATCH --account=def-gsarah
+     #SBATCH --gres=gpu:v100:1        # beluga only supports v100
+     #                                # reference:
+     #                                    https://docs.computecanada.ca/wiki/Using_GPUs_with_Slurm
+
+     bash B.sh $SLURM_ARRAY_TASK_ID
+     ```
+  
