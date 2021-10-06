@@ -80,7 +80,7 @@ R
   import torch
   torch.cuda.is_available()
   ```
-- To submit an job or job array, it is recommended to build 3 files: 
+- To work by submitting an job or job array, it is recommended to build 3 files: 
   1. a A.py file for the python codes
   2. a B.sh file including bash commands to activate the python environment and run the .py file
      ```bash
@@ -113,4 +113,10 @@ R
 
      bash B.sh $SLURM_ARRAY_TASK_ID
      ```
-  
+- To submit the job, just type the following commmand in terminal:
+     ```bash
+     # goto the directory where C.sh is saved
+     sbatch C.sh
+     ```
+- Done
+     
