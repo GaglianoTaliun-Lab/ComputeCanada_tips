@@ -1,5 +1,8 @@
 # ComputeCanada_tips
 
+### Clusters
+We have access to 4 clusters: beluga, graham, cedar, narval (login via $ ssh [username]@[cluster].computecanada.ca)
+
 ### Running scripts
 1) Do *not* run jobs on the login node. Always use sbatch or salloc (interactive job)! https://docs.computecanada.ca/wiki/Running_jobs#Interactive_jobs
 
