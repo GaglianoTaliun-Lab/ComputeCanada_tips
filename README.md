@@ -4,7 +4,7 @@
 We have access to 4 clusters: beluga, graham, cedar, narval (login via $ ssh [username]@[cluster].computecanada.ca)
 
 ### Running scripts
-1) Do *not* run jobs on the login node. Always use sbatch or salloc (interactive job)! https://docs.computecanada.ca/wiki/Running_jobs#Interactive_jobs
+1) Do *not* run jobs on the login node. Always use sbatch https://docs.computecanada.ca/wiki/Running_jobs#Use_sbatch_to_submit_jobs or salloc (interactive job)! https://docs.computecanada.ca/wiki/Running_jobs#Interactive_jobs
 
 ### Sharing files via Globus
 1) Login to Globus (via your Compute Canada login) and navigate to the folder/files you want to shared in https://app.globus.org/file-manager
