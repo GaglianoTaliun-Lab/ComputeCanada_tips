@@ -28,7 +28,9 @@ We have access to 4 clusters: beluga, graham, cedar, narval (login via $ ssh [us
 
 5) Install jupyter notebook and related extensions: $ pip install jupyter
 
-6) Create a wrapper script that launches jupyter notebook: $ echo -e '#!/bin/bash\nunset XDG_RUNTIME_DIR\njupyter notebook --ip $(hostname -f) --no-browser' > $VIRTUAL_ENV/bin/notebook.sh
+6) Create a wrapper script that launches jupyter notebook: 
+   $ VIRTUAL_ENV=venv
+   $ echo -e '#!/bin/bash\nunset XDG_RUNTIME_DIR\njupyter notebook --ip $(hostname -f) --no-browser' > venv/bin/notebook.sh
 
 7) Make the script executable: (jupyter_py3)_[name@server ~]$ chmod u+x $VIRTUAL_ENV/bin/notebook.sh
 
