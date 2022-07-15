@@ -14,13 +14,13 @@ We have access to 4 clusters: beluga, graham, cedar, narval (login via $ ssh [us
 ### Sharing files via ACL (permissions)
 cd -P /home/gsarah/projects/def-gsarah
 
-setfacl -m u:<username-with-whom-to-share>:--x .
+setfacl -m u:username-with-whom-to-share:--x .
 
-setfacl -m u:<username-with-whom-to-share>:rx directory_to_share
+setfacl -m u:username-with-whom-to-share:rx directory_to_share
 
 cd -P /home/gsarah/projects/def-gsarah/directory_to_share
 
-find . -type f -print0 | xargs -0 setfacl -m u:<username-with-whom-to-share>:r
+find . -type f -print0 | xargs -0 setfacl -m u:username-with-whom-to-share:r
 
 ### Remote Development Tips and Tricks
 1) Log into remote machine using SSH keys(without inputting password every time)  References: https://code.visualstudio.com/docs/remote/troubleshooting#_improving-your-security-with-a-dedicated-key
