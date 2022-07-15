@@ -16,7 +16,7 @@ cd -P /home/gsarah/projects/def-gsarah
 
 setfacl -m u:<username-with-whom-to-share>:--x .
 
-setfacl -m u:<username-with-whom-to-share>:rx cartagene
+setfacl -m u:<username-with-whom-to-share>:rx directory_to_share
 
 cd -P /home/gsarah/projects/def-gsarah/directory_to_share
 
