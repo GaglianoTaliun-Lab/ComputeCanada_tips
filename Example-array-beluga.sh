@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --time=100:00:00
-#SBATCH --job-name=composite
+#SBATCH --job-name=array
 #SBATCH --account=def-gsarah
 #SBATCH --mem=300G
 #SBATCH --cpus-per-task=1
